@@ -1,0 +1,10 @@
+*.sw?
+wiki
+.gradle/*
+node_modules/*
+build/*
+lib/*
+coverage/*
+docs/*
+.sass-cache/*
+npm-debug.log
