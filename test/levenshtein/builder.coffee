@@ -13,7 +13,7 @@ seed_random = require 'seed-random'
 {insertion, deletion, substitution, transposition, merge, split} = operations
 
 [dawg, lorem_ipsum] = do ->
-  path = "#{__dirname}/../../../shared/resources/lorem-ipsum-terms.txt"
+  path = "#{__dirname}/../../shared/resources/lorem-ipsum-terms.txt"
   lorem_ipsum = fs.readFileSync(path, 'utf8').split('\n')
   if lorem_ipsum[lorem_ipsum.length - 1] is ''
     lorem_ipsum.pop() #-> drop the empty string

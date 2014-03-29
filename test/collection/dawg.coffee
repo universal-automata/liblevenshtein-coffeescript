@@ -3,7 +3,7 @@ fs = require 'fs'
 {levenshtein: {Dawg}} = require '../../src/collection/dawg'
 
 programming_languages = do ->
-  path = "#{__dirname}/../../../shared/resources/programming-languages.txt"
+  path = "#{__dirname}/../../shared/resources/programming-languages.txt"
   programming_languages = fs.readFileSync(path, 'utf8').split('\n')
   if programming_languages[programming_languages.length - 1] is ''
     programming_languages.pop() #-> drop the empty string
