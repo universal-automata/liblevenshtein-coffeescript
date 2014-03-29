@@ -31,7 +31,7 @@ build = (watch, callback) ->
 
         fs.writeSync fd, '/**\n'
         fs.writeSync fd, '@license\n'
-        fs.writeSync fd, fs.readFileSync('../LICENSE', 'utf8')
+        fs.writeSync fd, fs.readFileSync('LICENSE', 'utf8')
         fs.writeSync fd, '\n'
         fs.writeSync fd, '*/\n'
 
