@@ -1,0 +1,4 @@
+*.sw?
+.gradle/*
+coverage/*
+npm-debug.log

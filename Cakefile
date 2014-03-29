@@ -9,7 +9,7 @@ build = (watch, callback) ->
   if typeof watch is 'function'
     callback = watch
     watch = false
-  options = ['-c', '-o', 'build', 'src']
+  options = ['-c', '-o', 'lib/liblevenshtein', 'src']
   options.unshift '-w' if watch
 
   coffee = spawn "#{__dirname}/node_modules/coffee-script/bin/coffee", options
@@ -43,23 +43,23 @@ build = (watch, callback) ->
         countdown.decrement()
 
     countdown.increment()
-    concat_files 'build/liblevenshtein.js', do ->
+    concat_files 'lib/liblevenshtein/liblevenshtein.js', do ->
       lib_files = []
-      for file in wrench.readdirSyncRecursive('build')
-        lib_files.push("build/#{file}") if /\.js$/.test(file)
+      for file in wrench.readdirSyncRecursive('lib/liblevenshtein')
+        lib_files.push("lib/liblevenshtein/#{file}") if /\.js$/.test(file)
       lib_files
 
     countdown.increment()
-    concat_files 'build/levenshtein-transducer.js', [
-      'build/collection/dawg.js'
-      'build/collection/max-heap.js'
-      'build/levenshtein/transducer.js'
-      'build/levenshtein/builder.js'
+    concat_files 'lib/liblevenshtein/levenshtein-transducer.js', [
+      'lib/liblevenshtein/collection/dawg.js'
+      'lib/liblevenshtein/collection/max-heap.js'
+      'lib/liblevenshtein/levenshtein/transducer.js'
+      'lib/liblevenshtein/levenshtein/builder.js'
     ]
 
     countdown.increment()
-    concat_files 'build/levenshtein-distance.js', [
-      'build/levenshtein/distance.js'
+    concat_files 'lib/liblevenshtein/levenshtein-distance.js', [
+      'lib/liblevenshtein/levenshtein/distance.js'
     ]
 
     countdown.decrement()

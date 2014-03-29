@@ -2,7 +2,6 @@
 wiki
 .gradle/*
 node_modules/*
-build/*
 lib/*
 coverage/*
 docs/*
