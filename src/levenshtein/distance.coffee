@@ -19,7 +19,12 @@ distance = (algorithm) ->
     when 'standard' then do (; distance) ->
       memoized_distance = {}
       distance = (v, w) ->
-        key = v + '\0' + w
+        key =
+          if v.localeCompare(w) < 0
+            v + '\0' + w
+          else
+            w + '\0' + v
+
         if (value = memoized_distance[key]) isnt `undefined`
           value
         else
@@ -39,13 +44,16 @@ distance = (algorithm) ->
             # s.length is 0 or t.length is 0
             return memoized_distance[key] = s.length || t.length if a is b
 
-            return memoized_distance[key] = 1 if (p = distance(s,w)) is 0
+            p = distance(s,w)
+            return memoized_distance[key] = 1 if p is 0
             min = p
 
-            return memoized_distance[key] = 1 if (p = distance(v,t)) is 0
+            p = distance(v,t)
+            return memoized_distance[key] = 1 if p is 0
             min = p if p < min
 
-            return memoized_distance[key] = 1 if (p = distance(s,t)) is 0
+            p = distance(s,t)
+            return memoized_distance[key] = 1 if p is 0
             min = p if p < min
 
             return memoized_distance[key] = 1 + min
@@ -56,7 +64,12 @@ distance = (algorithm) ->
     when 'transposition' then do (; distance) ->
       memoized_distance = {}
       distance = (v, w) ->
-        key = v + '\0' + w
+        key =
+          if v.localeCompare(w) < 0
+            v + '\0' + w
+          else
+            w + '\0' + v
+
         if (value = memoized_distance[key]) isnt `undefined`
           value
         else
@@ -76,19 +89,23 @@ distance = (algorithm) ->
             # x.length is 0 or y.length is 0
             return memoized_distance[key] = x.length || y.length if a is b
 
-            return memoized_distance[key] = 1 if (p = distance(x,w)) is 0
+            p = distance(x,w)
+            return memoized_distance[key] = 1 if p is 0
             min = p
 
-            return memoized_distance[key] = 1 if (p = distance(v,y)) is 0
+            p = distance(v,y)
+            return memoized_distance[key] = 1 if p is 0
             min = p if p < min
 
-            return memoized_distance[key] = 1 if (p = distance(x,y)) is 0
+            p = distance(x,y)
+            return memoized_distance[key] = 1 if p is 0
             min = p if p < min
 
             a1 = x[0]  # prefix character of x
             b1 = y[0]  # prefix character of y
             if a is b1 and a1 is b
-              return memoized_distance[key] = 1 if (p = distance(f(v,1), f(w,1))) is 0
+              p = distance(f(v,1), f(w,1))
+              return memoized_distance[key] = 1 if p is 0
               min = p if p < min
 
             return memoized_distance[key] = 1 + min
@@ -99,7 +116,12 @@ distance = (algorithm) ->
     when 'merge_and_split' then do (; distance) ->
       memoized_distance = {}
       distance = (v, w) ->
-        key = v + '\0' + w
+        key =
+          if v.localeCompare(w) < 0
+            v + '\0' + w
+          else
+            w + '\0' + v
+
         if (value = memoized_distance[key]) isnt `undefined`
           value
         else
@@ -119,20 +141,27 @@ distance = (algorithm) ->
             # x.length is 0 or y.length is 0
             return memoized_distance[key] = x.length || y.length if a is b
 
-            return memoized_distance[key] = 1 if (p = distance(x,w)) is 0
+            p = distance(x,w)
+            return memoized_distance[key] = 1 if p is 0
             min = p
 
-            return memoized_distance[key] = 1 if (p = distance(v,y)) is 0
+            p = distance(v,y)
+            return memoized_distance[key] = 1 if p is 0
             min = p if p < min
 
-            return memoized_distance[key] = 1 if (p = distance(x,y)) is 0
+            p = distance(x,y)
+            return memoized_distance[key] = 1 if p is 0
             min = p if p < min
 
-            return memoized_distance[key] = 1 if (p = if w.length > 1 then distance(x, f(w,1)) else Infinity) is 0
-            min = p if p < min
+            if w.length > 1
+              p = distance(x, f(w,1))
+              return memoized_distance[key] = 1 if p is 0
+              min = p if p < min
 
-            return memoized_distance[key] = 1 if (p = if v.length > 1 then distance(f(v,1), y) else Infinity) is 0
-            min = p if p < min
+            if v.length > 1
+              p = distance(f(v,1), y)
+              return memoized_distance[key] = 1 if p is 0
+              min = p if p < min
 
             return memoized_distance[key] = 1 + min
 
