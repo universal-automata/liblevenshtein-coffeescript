@@ -52,7 +52,7 @@ To use the library on your website, reference the desired file from the
 ```
 
 Once the script loads, you should construct a transducer via the [Builder
-Api](http://dylon.github.io/liblevenshtein/coffeescript/docs/builder.html):
+Api](http://dylon.github.io/liblevenshtein/docs/coffeescript/builder.html):
 
 ```javascript
 $(function ($) {
