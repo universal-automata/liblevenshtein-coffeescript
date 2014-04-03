@@ -1,4 +1,4 @@
-# liblevenshtein
+# liblevenshtein (CoffeeScript / JavaScript)
 
 ### A library for generating Finite State Transducers based on Levenshtein Automata.
 
