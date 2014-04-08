@@ -34,6 +34,48 @@ deployed to, let me know.
 
 ### Basic Usage:
 
+#### Node.js
+
+Install the module via `npm`:
+
+```
+% npm install liblevenshtein
+info trying registry request attempt 1 at 12:59:16
+http GET https://registry.npmjs.org/liblevenshtein
+http 304 https://registry.npmjs.org/liblevenshtein
+liblevenshtein@2.0.1 node_modules/liblevenshtein
+```
+
+Then, you may `require` it do do whatever you need:
+
+```javascript
+var levenshtein = require('liblevenshtein');
+
+// Assume "completion_list" is a list of terms you want to match against in
+// fuzzy queries.
+var builder = new levenshtein.Builder()
+  .dictionary(completion_list, false)  // generate spelling candidates from unsorted completion_list
+  .algorithm("transposition")          // use Levenshtein distance extended with transposition
+  .sort_candidates(true)               // sort the spelling candidates before returning them
+  .case_insensitive_sort(true)         // ignore character-casing while sorting terms
+  .include_distance(false)             // just return the ordered terms (drop the distances)
+  .maximum_candidates(10);             // only want the top-10 candidates
+
+// Maximum number of spelling errors we will allow the spelling candidates to
+// have, with regard to the query term.
+var MAX_EDIT_DISTANCE = 2;
+
+var transducer = builder.build();
+
+// Assume "term" corresponds to some query term. Once invoking
+// transducer.transduce(term, MAX_EDIT_DISTANCE), candidates will contain a list
+// of all spelling candidates from the completion list that are within
+// MAX_EDIT_DISTANCE units of error from the query term.
+var candidates = transducer.transduce(term, MAX_EDIT_DISTANCE);
+```
+
+#### In the Browser
+
 To use the library on your website, reference the desired file from the
 `<head/>` of your document, like so:
 

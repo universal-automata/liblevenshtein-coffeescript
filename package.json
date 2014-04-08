@@ -1,6 +1,6 @@
 {
   "name": "liblevenshtein",
-  "version": "2.0.1",
+  "version": "2.0.3",
   "description": "Various utilities regarding Levenshtein transducers.",
   "keywords": [
   	"javascript",
