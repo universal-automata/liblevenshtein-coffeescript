@@ -46,7 +46,7 @@ http 304 https://registry.npmjs.org/liblevenshtein
 liblevenshtein@2.0.1 node_modules/liblevenshtein
 ```
 
-Then, you may `require` it do do whatever you need:
+Then, you may `require` it to do whatever you need:
 
 ```javascript
 var levenshtein = require('liblevenshtein');
