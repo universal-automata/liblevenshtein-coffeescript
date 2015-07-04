@@ -43,7 +43,7 @@ Install the module via `npm`:
 info trying registry request attempt 1 at 12:59:16
 http GET https://registry.npmjs.org/liblevenshtein
 http 304 https://registry.npmjs.org/liblevenshtein
-liblevenshtein@2.0.2 node_modules/liblevenshtein
+liblevenshtein@2.0.4 node_modules/liblevenshtein
 ```
 
 Then, you may `require` it to do whatever you need:
@@ -85,7 +85,7 @@ To use the library on your website, reference the desired file from the
   <head>
     <!-- stuff ... -->
     <script type="text/javascript"
-      src="http://universal-automata.github.com/liblevenshtein/javascripts/2.0.2/levenshtein-transducer.min.js">
+      src="http://universal-automata.github.com/liblevenshtein/javascripts/2.0.4/levenshtein-transducer.min.js">
     </script>
     <!-- more stuff ... -->
   </head>
