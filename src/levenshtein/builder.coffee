@@ -467,12 +467,25 @@ class Builder
             (f == n) && (i == j)
         else
           if t is 1
-            #(e < f) && Math.abs(j - (i - 1)) <= (f - e)
+            # We have two cases:
             #
-            # NOTE: This is how I derived what follows:
-            #   Math.abs(j - (i - 1)) = Math.abs(j - i + 1) = Math.abs(j - i) + 1
+            # Case 1: (j < i) => (j - i) = - (i - j)
+            #                 => |j - (i - 1)| = |j - i + 1|
+            #                                  = |-(i - j) + 1|
+            #                                  = |-(i - j - 1)|
+            #                                  = i - j - 1
             #
-            ((i < j) && (j - i) || (i - j)) + 1 <= (f - e)
+            # Case 1 holds, because i and j are integers, and j < i implies i is at
+            # least 1 unit greater than j, further implying that i - j - 1 is
+            # non-negative.
+            #
+            # Case 2: (j >= i) => |j - (i - 1)| = |j - i + 1| = j - i + 1
+            #
+            # Case 2 holds for the same reason case 1 does, in that j - i >= 0, and
+            # adding 1 to the difference will only strengthen its non-negativity.
+            #
+            #Math.abs(j - (i - 1)) <= (f - e);
+            (if (j < i) then (i - j - 1) else (j - i + 1)) <= (f - e)
           else
             #(e < f) && Math.abs(j - i) <= (f - e)
             ((i < j) && (j - i) || (i - j)) <= (f - e)

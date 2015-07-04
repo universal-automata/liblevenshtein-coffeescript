@@ -25,9 +25,9 @@ as by selecting the sequence of terms that have the greatest probability of
 appearing together).
 
 For a quick demonstration, please visit the [Github Page,
-here](http://dylon.github.io/liblevenshtein/).
+here](http://universal-automata.github.io/liblevenshtein/).
 
-The library is currently only written in CoffeeScript (and JavaScript), but I
+The library is currently written in Java, CoffeeScript, and JavaScript, but I
 will be porting it to other languages, soon.  If you have a specific language
 you would like to see it in, or package-management system you would like it
 deployed to, let me know.
@@ -43,7 +43,7 @@ Install the module via `npm`:
 info trying registry request attempt 1 at 12:59:16
 http GET https://registry.npmjs.org/liblevenshtein
 http 304 https://registry.npmjs.org/liblevenshtein
-liblevenshtein@2.0.1 node_modules/liblevenshtein
+liblevenshtein@2.0.2 node_modules/liblevenshtein
 ```
 
 Then, you may `require` it to do whatever you need:
@@ -85,7 +85,7 @@ To use the library on your website, reference the desired file from the
   <head>
     <!-- stuff ... -->
     <script type="text/javascript"
-      src="http://dylon.github.com/liblevenshtein/javascripts/2.0.1/levenshtein-transducer.min.js">
+      src="http://universal-automata.github.com/liblevenshtein/javascripts/2.0.2/levenshtein-transducer.min.js">
     </script>
     <!-- more stuff ... -->
   </head>
@@ -96,7 +96,7 @@ To use the library on your website, reference the desired file from the
 ```
 
 Once the script loads, you should construct a transducer via the [Builder
-Api](http://dylon.github.io/liblevenshtein/docs/coffeescript/builder.html):
+Api](http://universal-automata.github.io/liblevenshtein/docs/coffeescript/builder.html):
 
 ```javascript
 $(function ($) {
@@ -136,10 +136,12 @@ $(function ($) {
 
 This will give the user autocompletion hints as he types in the search box.
 
+### Reference
+
 This library is based largely on the work of [Stoyan
 Mihov](http://www.lml.bas.bg/~stoyan/), [Klaus
 Schulz](http://www.cis.uni-muenchen.de/people/schulz.html), and Petar Nikolaev Mitankin: "[Fast
 String Correction with
 Levenshtein-Automata](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.16.652
 "Klaus Schulz and Stoyan Mihov (2002)")".  For more details, please see the
-[wiki](https://github.com/dylon/liblevenshtein/wiki).
+[wiki](https://github.com/universal-automata/liblevenshtein/wiki).
