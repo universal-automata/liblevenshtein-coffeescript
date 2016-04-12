@@ -1,5 +1,7 @@
 # liblevenshtein
 
+[![Join the chat at https://gitter.im/universal-automata/liblevenshtein-coffeescript](https://badges.gitter.im/universal-automata/liblevenshtein-coffeescript.svg)](https://gitter.im/universal-automata/liblevenshtein-coffeescript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## CoffeeScript / JavaScript / Node.js
 
 ### A library for generating Finite State Transducers based on Levenshtein Automata.
