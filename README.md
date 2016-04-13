@@ -150,7 +150,7 @@ Levenshtein-Automata](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.16
 
 [travis-ci-badge]: https://travis-ci.org/universal-automata/liblevenshtein-coffeescript.svg?branch=master
 [travis-ci]: https://travis-ci.org/universal-automata/liblevenshtein-coffeescript
-[npm-version-badge]: https://www.npmjs.com/package/liblevenshtein
-[npm-repo]: https://badge.fury.io/js/liblevenshtein.svg
+[npm-version-badge]: https://badge.fury.io/js/liblevenshtein.svg
+[npm-repo]: https://www.npmjs.com/package/liblevenshtein
 [gitter-badge]: https://badges.gitter.im/universal-automata/liblevenshtein-coffeescript.svg
 [gitter-channel]: https://gitter.im/universal-automata/liblevenshtein-coffeescript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
