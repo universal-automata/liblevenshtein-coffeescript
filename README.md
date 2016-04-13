@@ -4,8 +4,8 @@
 
 ### A library for generating Finite State Transducers based on Levenshtein Automata.
 
-[![Build Status][travis-ci-badge]][travis-ci]
 [![npm version][npm-version-badge]][npm-repo]
+[![Build Status][travis-ci-badge]][travis-ci]
 [![Join the chat at https://gitter.im/universal-automata/liblevenshtein-coffeescript][gitter-badge]][gitter-channel]
 
 Levenshtein transducers accept a query term and return all terms in a
