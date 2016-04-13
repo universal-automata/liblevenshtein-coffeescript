@@ -4,8 +4,9 @@
 
 ### A library for generating Finite State Transducers based on Levenshtein Automata.
 
-[![Build Status](https://travis-ci.org/universal-automata/liblevenshtein-coffeescript.svg?branch=master)](https://travis-ci.org/universal-automata/liblevenshtein-coffeescript)
-[![Join the chat at https://gitter.im/universal-automata/liblevenshtein-coffeescript](https://badges.gitter.im/universal-automata/liblevenshtein-coffeescript.svg)](https://gitter.im/universal-automata/liblevenshtein-coffeescript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status][travis-ci-badge]][travis-ci]
+[![npm version][npm-version-badge]][npm-repo]
+[![Join the chat at https://gitter.im/universal-automata/liblevenshtein-coffeescript][gitter-badge]][gitter-channel]
 
 Levenshtein transducers accept a query term and return all terms in a
 dictionary that are within n spelling errors away from it. They constitute a
@@ -146,3 +147,10 @@ String Correction with
 Levenshtein-Automata](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.16.652
 "Klaus Schulz and Stoyan Mihov (2002)")".  For more details, please see the
 [wiki](https://github.com/universal-automata/liblevenshtein/wiki).
+
+[travis-ci-badge]: https://travis-ci.org/universal-automata/liblevenshtein-coffeescript.svg?branch=master
+[travis-ci]: https://travis-ci.org/universal-automata/liblevenshtein-coffeescript
+[npm-version-badge]: https://www.npmjs.com/package/liblevenshtein
+[npm-repo]: https://badge.fury.io/js/liblevenshtein.svg
+[gitter-badge]: https://badges.gitter.im/universal-automata/liblevenshtein-coffeescript.svg
+[gitter-channel]: https://gitter.im/universal-automata/liblevenshtein-coffeescript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
