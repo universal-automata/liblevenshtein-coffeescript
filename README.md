@@ -1,12 +1,11 @@
 # liblevenshtein
 
-[![Join the chat at https://gitter.im/universal-automata/liblevenshtein-coffeescript](https://badges.gitter.im/universal-automata/liblevenshtein-coffeescript.svg)](https://gitter.im/universal-automata/liblevenshtein-coffeescript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 ## CoffeeScript / JavaScript / Node.js
 
 ### A library for generating Finite State Transducers based on Levenshtein Automata.
 
 [![Build Status](https://travis-ci.org/universal-automata/liblevenshtein-coffeescript.svg?branch=master)](https://travis-ci.org/universal-automata/liblevenshtein-coffeescript)
+[![Join the chat at https://gitter.im/universal-automata/liblevenshtein-coffeescript](https://badges.gitter.im/universal-automata/liblevenshtein-coffeescript.svg)](https://gitter.im/universal-automata/liblevenshtein-coffeescript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Levenshtein transducers accept a query term and return all terms in a
 dictionary that are within n spelling errors away from it. They constitute a
